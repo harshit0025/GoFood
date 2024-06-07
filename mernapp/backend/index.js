@@ -31,8 +31,11 @@ app.get('/', (req, res) => {
   res.send('Hello Harshit!')
 })
 
-
+//Login and Signup
 app.use('/api', require("./Routes/createUser"))
+
+//Display Data
+app.use('/api', require("./Routes/displayData"))
 
 
 app.listen(port, () => {

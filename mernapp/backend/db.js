@@ -8,9 +8,11 @@ const connectDB = async () => {
         await mongoose.connect(mongoURI);
         console.log("DB connection established");
 
-        // const fetchedData = await mongoose.connection.db.collection("food_items");
-        // let data = await fetchedData.find({}).toArray();
+        const fetchedData = await mongoose.connection.db.collection("food_items");
+        let data = await fetchedData.find({}).toArray();
         // console.log(data);
+        global.food_items = data;
+        // console.log(global.food_items);
 
 
     }catch(err){
