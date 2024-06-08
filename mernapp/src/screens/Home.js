@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
-import Carousel from "../Components/Carousel";
+// import Carousel from "../Components/Carousel";
 
 export default function Home() {
     const [search, setSearch] = useState("");
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
             <div className="carousel-item active">
               <img
-                src="https://source.unsplash.com/random/900×700/?burger"
+                src="https://source.unsplash.com/random/800×700/?burger"
                 className="d-block w-100 "
                 style={{ filter: "brightness(30%)" }}
                 alt="..."
