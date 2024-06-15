@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors');
 
 const app = express()
-const port = 3001;
+const port = 5000;
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -36,6 +36,9 @@ app.use('/api', require("./Routes/createUser"))
 
 //Display Data
 app.use('/api', require("./Routes/displayData"))
+
+//Checout order
+app.use('/api', require("./Routes/OrderData"))
 
 
 app.listen(port, () => {

@@ -24,6 +24,10 @@ const reducer = (state, action) => {
                 
             })
             return arr;
+
+        case "DROP":
+            let empArr = [];
+            return empArr;
         
         default:
             console.log("Error in reducer");
