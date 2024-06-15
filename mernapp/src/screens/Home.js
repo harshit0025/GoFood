@@ -110,7 +110,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container">
-        {foodCat != []
+        {foodCat.length !== 0
           ? foodCat.map((data) => {
               return (
                 <div className="row mb-3">
@@ -118,7 +118,7 @@ export default function Home() {
                     {data.CategoryName}
                   </div>
                   <hr />
-                  {foodItem != [] ? (
+                  {foodItem.length !== 0 ? (
                     foodItem
                       .filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
                       .map((filterItems) => {
@@ -130,8 +130,7 @@ export default function Home() {
                             <Card
                               foodItems={filterItems}
                               options={filterItems.options[0]}
-                              
-                            />
+                            ></Card>
                           </div>
                         );
                       })

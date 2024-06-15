@@ -18,9 +18,28 @@ export default function Card(props) {
     let foodItem = props.foodItems;
 
     const handleAddToCart = async () => {
+        let food = []
+        for(const item of data){
+            if(item.id === foodItem._id){
+                food = item;
+                break;
+            }
+        }
+        if(food.length !== 0){
+            if(food.size === size){
+                await dispatch({ type: "UPDATE", id:foodItem._id, price:finalPrice, qty: qty})
+                return
+            }else if(food.size !== size){
+                await dispatch({type: "ADD", id:foodItem._id, name:foodItem.name, price:finalPrice, qty:qty, size:size, img:foodItem.img})
+                return
+            }
+            return
+            
+        }
         await dispatch({type: "ADD", id:foodItem._id, name:foodItem.name, price:finalPrice, qty:qty, size:size, img:foodItem.img})
-        return console.log(data);
+            // await console.log(data);
     }
+
 
     let finalPrice = qty * parseInt(options[size]);
 
