@@ -37,7 +37,7 @@ app.use('/api', require("./Routes/createUser"))
 //Display Data
 app.use('/api', require("./Routes/displayData"))
 
-//Checout order
+//Checkout order
 app.use('/api', require("./Routes/OrderData"))
 
 
